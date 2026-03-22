@@ -1,0 +1,4 @@
+export type ToolType = "提示词" | "网页工具" | "Python脚本" | "Coze/Dify工作流" | "其他";
+export type Profile = { id: string; username: string; avatar_url: string | null; bio: string | null; website: string | null; created_at: string; };
+export type Tool = { id: string; author_id: string; category_id: number; name: string; desc: string; type: ToolType; system_prompt: string | null; prompt_template: string | null; input_placeholder: string | null; example_inputs: string[] | null; code_content: string | null; iframe_url: string | null; workflow_url: string | null; cover_image: string | null; tags: string[]; is_free: boolean; price: number | null; is_published: boolean; views_count: number; likes_count: number; saves_count: number; comments_count: number; created_at: string; updated_at: string; profiles?: Profile; };
+export type Comment = { id: number; tool_id: string; user_id: string; parent_id: number | null; content: string; created_at: string; profiles?: Profile; };
